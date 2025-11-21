@@ -122,5 +122,69 @@ const lessonsData = {
                 "examples": "<p>J'aime aller à la mer.</p>"
             }
         }
+    },
+
+    "tsunamis": {
+        "title": "Comment fonctionnent les tsunamis ?",
+        "level": "Niveau A2 - Basé sur la vidéo de TED-Ed",
+        "video": {
+            "id": "FTJLWwxki3Q",
+            "title": "Comment fonctionnent les tsunamis – Alex Gendler"
+        },
+        "activities": {
+            "vocabulary": {
+                "definitions": [
+                    { "id": "A", "text": "Une grande quantité d'eau qui monte et descend." },
+                    { "id": "B", "text": "La terre qui est juste à côté de la mer." },
+                    { "id": "C", "text": "Quand la terre tremble très fort (tremblement de terre)." },
+                    { "id": "D", "text": "La force qui fait bouger les choses." },
+                    { "id": "E", "text": "Une série de vagues géantes causées par un séisme." },
+                    { "id": "F", "text": "Aller très rapidement (le contraire de lent)." },
+                    { "id": "G", "text": "Un mur construit pour arrêter l'eau." },
+                    { "id": "H", "text": "La distance entre la surface et le fond de l'océan." }
+                ],
+                "items": [
+                    { "label": "Vague", "answer": "A" },
+                    { "label": "Côte", "answer": "B" },
+                    { "label": "Séisme", "answer": "C" },
+                    { "label": "Énergie", "answer": "D" },
+                    { "label": "Tsunami", "answer": "E" },
+                    { "label": "Vite", "answer": "F" },
+                    { "label": "Digue", "answer": "G" },
+                    { "label": "Profondeur", "answer": "H" }
+                ]
+            },
+            "fillInTheBlanks": [
+                { "before": "Un tsunami n'est pas une", "answer": "vague", "after": "normale causée par le vent." },
+                { "before": "Il est souvent provoqué par un", "answer": "séisme", "after": "sous l'océan." },
+                { "before": "C'est l'", "answer": "énergie", "after": "du tremblement de terre qui pousse l'eau." },
+                { "before": "Au milieu de l'océan, l'eau se déplace très", "answer": "vite", "after": "." },
+                { "before": "Le danger est grand quand l'eau arrive sur la", "answer": "côte", "after": "." }
+            ],
+            "scrambled": [
+                { "text": "vagues / Les / dangereuses / sont / .", "answer": "Les vagues sont dangereuses." },
+                { "text": "terre / La / tremble / parfois / .", "answer": "La terre tremble parfois." },
+                { "text": "vite / L'eau / déplace / se / très / .", "answer": "L'eau se déplace très vite." },
+                { "text": "faut / Il / protéger / se / .", "answer": "Il faut se protéger." }
+            ],
+            "comprehension": {
+                "text": "\n                    <p>Un <strong>tsunami</strong> n'est pas une vague normale. Les vagues normales sont créées par le vent. Les tsunamis sont créés par de l'<strong>énergie</strong> qui vient du fond de l'océan, souvent à cause d'un <strong>séisme</strong> (tremblement de terre).</p>\n                    <p>Au milieu de l'océan, le tsunami va très <strong>vite</strong> (800 km/h), mais il n'est pas très haut. Les bateaux ne le sentent pas. Mais quand le tsunami arrive près de la <strong>côte</strong>, la profondeur diminue. Alors, la vague ralentit et devient très haute. Elle peut faire 30 mètres de haut !</p>\n                    <p>L'eau entre dans les terres et détruit tout (arbres, maisons). Pour se protéger, les scientifiques surveillent l'océan pour prévenir les gens avant que la vague n'arrive.</p>\n                ",
+                "questions": [
+                    { "text": "Les tsunamis sont créés par le vent.", "answer": "false" },
+                    { "text": "Un tsunami va très vite au milieu de l'océan.", "answer": "true" },
+                    { "text": "Les bateaux sentent toujours les tsunamis au large.", "answer": "false" },
+                    { "text": "La vague devient plus petite près de la côte.", "answer": "false" },
+                    { "text": "Les scientifiques essaient de prévenir les gens.", "answer": "true" }
+                ]
+            },
+            "writtenExpression": {
+                "questions": [
+                    { "text": "Pourquoi les tsunamis sont-ils dangereux ?" },
+                    { "text": "Que feriez-vous si vous entendiez une alarme au bord de la mer ?" }
+                ],
+                "examples": "\n                    <p class=\"font-semibold text-blue-800\">Voici des exemples de réponses :</p>\n                    <p class=\"mt-2 font-bold text-sm\">1. Le danger :</p>\n                    <ul class=\"list-disc list-inside ml-4 italic text-gray-700\">\n                        <li>\"Ils sont dangereux parce que l'eau est très puissante.\"</li>\n                        <li>\"Ils détruisent les maisons et les arbres sur la côte.\"</li>\n                    </ul>\n                    <p class=\"mt-2 font-bold text-sm\">2. La réaction :</p>\n                    <ul class=\"list-disc list-inside ml-4 italic text-gray-700\">\n                        <li>\"Je courrais très vite vers une montagne ou une colline.\"</li>\n                        <li>\"J'écouterais les informations et je partirais loin de la plage.\"</li>\n                    </ul>\n                "
+            }
+        }
     }
+
 };

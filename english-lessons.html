@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Activity</title>
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="topics-en.js"></script>
+    <style>
+        /* Add a subtle focus ring for accessibility */
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #2563eb; /* blue-600 */
+            border-color: #3b82f6; /* blue-500 */
+        }
+        /* Custom styles for feedback */
+        .correct {
+            border-color: #22c55e !important; /* green-500 */
+            background-color: #f0fdf4;
+        }
+        .incorrect {
+            border-color: #ef4444 !important; /* red-500 */
+            background-color: #fef2f2;
+        }
+        .correct-text {
+            color: #16a34a; /* green-600 */
+        }
+        .incorrect-text {
+            color: #dc2626; /* red-600 */
+        }
+        /* New styles for quiz labels */
+        .correct-text-label {
+            color: #16a34a; /* green-600 */
+            font-weight: 700;
+        }
+        .incorrect-text-label {
+            color: #dc2626; /* red-600 */
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        body {
+            background-color: #f3f4f6;
+        }
+    </style>
+</head>
+<body class="font-sans leading-normal text-gray-800">
+
+    <div class="container mx-auto max-w-3xl p-4 sm:p-8">
+        
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <div class="mb-6">
+                <label for="topicSelect" class="block text-sm font-semibold text-gray-500 mb-1">Choose a topic:</label>
+                <select id="topicSelect" class="p-2 border border-gray-300 rounded-md shadow-sm focus:ring-2 focus:ring-blue-500 bg-white">
+                    <!-- Options populated by JS -->
+                </select>
+            </div>
+            <h1 id="lessonTitle" class="text-3xl sm:text-4xl font-bold text-blue-800"></h1>
+            <p id="lessonLevel" class="text-lg text-gray-600 mt-2"></p>
+        </header>
+
+        <!-- Video Embed Section -->
+        <section class="bg-white p-6 rounded-lg shadow-md mb-6 border-t-4 border-blue-600">
+            <h2 class="text-2xl font-semibold text-blue-700 mb-4">The Video</h2>
+            <p class="text-gray-600 mb-4">Watch the video before starting. Don't worry if you don't understand everything! You can watch it multiple times.</p>
+            <div class="aspect-w-16 aspect-h-9 mb-4">
+                <!-- Basic responsive wrapper for iframe if needed, or just a link button as per request style -->
+                <div class="text-center">
+                     <iframe id="videoIframe" width="100%" height="315" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen class="rounded-lg shadow-lg mb-4"></iframe>
+                </div>
+            </div>
+            <p id="videoTitle" class="text-sm text-gray-500 text-center"></p>
+        </section>
+
+        <!-- Form container for all activities -->
+        <form id="quizForm" onsubmit="return false;">
+
+            <!-- Activity 1: Vocabulary -->
+            <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">Activity 1: Vocabulary</h2>
+                <p class="text-gray-600 mb-4">Match the word (left) to the correct definition (right).</p>
+                
+                <div class="space-y-4">
+                    <!-- Definitions List -->
+                    <div class="bg-blue-50 p-4 rounded-md border border-blue-100">
+                        <h3 class="font-semibold mb-2 text-blue-800">Definitions</h3>
+                        <ul id="definitionsList" class="list-none text-gray-700 space-y-2">
+                            <!-- Populated by JS -->
+                        </ul>
+                    </div>
+
+                    <!-- Matching Inputs -->
+                    <div id="matchingItems" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Items Populated by JS -->
+                    </div>
+                </div>
+                <div class="flex justify-start space-x-4 mt-6">
+                    <button id="checkButton1" type="button" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-300">Check</button>
+                    <button id="resetButton1" type="button" class="bg-gray-500 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-gray-600 transition duration-300">Reset</button>
+                </div>
+                <p id="feedback1" class="mt-4 text-lg font-semibold"></p>
+            </section>
+
+            <!-- Activity 2: Fill in the blanks -->
+            <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">Activity 2: Fill in the blanks</h2>
+                <p class="text-gray-600 mb-4">Use the words from Activity 1 to complete the sentences below.</p>
+                <div id="fillBlanksContainer" class="space-y-4 text-lg leading-relaxed">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="flex justify-start space-x-4 mt-6">
+                    <button id="checkButton2" type="button" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-300">Check</button>
+                    <button id="resetButton2" type="button" class="bg-gray-500 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-gray-600 transition duration-300">Reset</button>
+                </div>
+                <p id="feedback2" class="mt-4 text-lg font-semibold"></p>
+            </section>
+
+            <!-- Activity 3: Scrambled Sentences -->
+            <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">Activity 3: Scrambled Sentences</h2>
+                <p class="text-gray-600 mb-4">Put the words in order to make a correct sentence.</p>
+                <div id="scrambledContainer" class="space-y-6">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="flex justify-start space-x-4 mt-6">
+                    <button id="checkButton3" type="button" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-300">Check</button>
+                    <button id="resetButton3" type="button" class="bg-gray-500 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-gray-600 transition duration-300">Reset</button>
+                </div>
+                <p id="feedback3" class="mt-4 text-lg font-semibold"></p>
+            </section>
+
+            <!-- Activity 4: Reading and Comprehension -->
+            <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">Activity 4: Comprehension</h2>
+                
+                <!-- Reading Text -->
+                <article class="bg-blue-50 p-6 rounded-md mb-6 border-l-4 border-blue-500 shadow-sm">
+                    <h3 class="text-xl font-bold text-blue-900 mb-3">Video Summary</h3>
+                    <div id="readingText" class="prose prose-lg text-gray-700 space-y-3 leading-relaxed">
+                        <!-- Populated by JS -->
+                    </div>
+                </article>
+
+                <!-- Quiz Questions -->
+                <h3 class="text-lg font-semibold mb-4 text-gray-800">True or False?</h3>
+                <div id="quizContainer" class="space-y-6">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="flex justify-start space-x-4 mt-6">
+                    <button id="checkButton4" type="button" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-300">Check</button>
+                    <button id="resetButton4" type="button" class="bg-gray-500 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-gray-600 transition duration-300">Reset</button>
+                </div>
+                <p id="feedback4" class="mt-4 text-lg font-semibold"></p>
+            </section>
+
+            <!-- Activity 5: Written Expression -->
+            <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">Activity 5: Written Expression</h2>
+                <p class="text-gray-600 mb-4">Answer the questions with 1 or 2 complete sentences.</p>
+                <div id="writingContainer" class="space-y-6">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="flex justify-start space-x-4 mt-6">
+                    <button id="checkButton5" type="button" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-300">See examples</button>
+                    <button id="resetButton5" type="button" class="bg-gray-500 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-gray-600 transition duration-300">Clear</button>
+                </div>
+                <div id="feedback5" class="hidden mt-4 text-base font-normal prose bg-blue-50 p-4 rounded-md border border-blue-100"></div>
+            </section>
+
+            <!-- New Section: Submit Score -->
+            <section id="submissionSection" class="bg-white p-6 rounded-lg shadow-md mb-6 border-t-2 border-green-500">
+                <h2 class="text-2xl font-semibold text-green-700 mb-4">Your Score</h2>
+                <p class="text-gray-600 mb-4">Enter your name to see your final result.</p>
+                <div class="space-y-4">
+                    <div>
+                        <label for="nickname" class="font-medium block mb-1">Nickname and Number:</label>
+                        <input type="text" id="nickname" class="p-2 border border-gray-300 rounded-md w-full md:w-1/2" placeholder="Jake 01">
+                    </div>
+                </div>
+                <div class="flex justify-start mt-6">
+                    <button id="totalScoreButton" type="button" class="bg-green-600 text-white font-bold py-3 px-8 rounded-lg shadow-lg hover:bg-green-700 transform hover:scale-105 transition duration-300">
+                        See my total score
+                    </button>
+                </div>
+            </section>
+
+            <!-- New Section: Results Box (Hidden by default) -->
+            <div id="resultsBox" class="hidden bg-white p-8 rounded-lg shadow-xl mt-8 border-4 border-blue-600 relative overflow-hidden">
+                <div class="absolute top-0 right-0 -mt-4 -mr-4 bg-blue-600 text-white px-10 py-2 rotate-45">Results</div>
+                <h2 class="text-3xl font-bold text-center text-blue-800 mb-6">Report Card</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <p class="text-gray-600">Student:</p>
+                        <p class="text-xl font-bold text-gray-800" id="resultNickname"></p>
+                    </div>
+                    <div>
+                        <p class="text-gray-600">Date:</p>
+                        <p class="text-xl font-bold text-gray-800" id="resultTimestamp"></p>
+                    </div>
+                </div>
+
+                <div class="bg-gray-100 p-6 rounded-xl text-center mb-8">
+                    <p class="text-lg text-gray-600 uppercase tracking-wide font-semibold">Total Score</p>
+                    <div class="text-5xl font-bold text-blue-600 mt-2">
+                        <span id="resultTotalScore">0</span> / <span id="resultMaxScore">0</span>
+                    </div>
+                </div>
+
+                <h3 class="text-xl font-semibold text-gray-800 mb-4 border-b pb-2">Your written answers</h3>
+                <div class="bg-gray-50 p-4 rounded-md space-y-4">
+                    <div>
+                        <p class="font-semibold text-blue-800 text-sm">Question 1 (Screen time):</p>
+                        <p id="resultWrite1" class="text-gray-700 italic pl-4 border-l-2 border-blue-300 mt-1"></p>
+                    </div>
+                    <div>
+                        <p class="font-semibold text-blue-800 text-sm">Question 2 (Concentration tips):</p>
+                        <p id="resultWrite2" class="text-gray-700 italic pl-4 border-l-2 border-blue-300 mt-1"></p>
+                    </div>
+                </div>
+
+                <p class="text-center text-gray-500 mt-8 text-sm">Take a screenshot to send to your teacher.</p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex justify-center space-x-4 mt-12 mb-8">
+                <button id="resetButton" type="button" class="bg-gray-500 text-white font-semibold py-2 px-6 rounded-lg shadow hover:bg-gray-600 transition duration-300">
+                    Start Over
+                </button>
+            </div>
+
+        </form>
+    </div>
+
+    <script>
+        // --- Global State ---
+        let correctAnswers = {};
+        let currentTopicId = "";
+
+        // --- Get Static Elements ---
+        const topicSelect = document.getElementById('topicSelect');
+        const lessonTitle = document.getElementById('lessonTitle');
+        const lessonLevel = document.getElementById('lessonLevel');
+        const videoIframe = document.getElementById('videoIframe');
+        const videoTitle = document.getElementById('videoTitle');
+        
+        const definitionsList = document.getElementById('definitionsList');
+        const matchingItems = document.getElementById('matchingItems');
+        const fillBlanksContainer = document.getElementById('fillBlanksContainer');
+        const scrambledContainer = document.getElementById('scrambledContainer');
+        const readingText = document.getElementById('readingText');
+        const quizContainer = document.getElementById('quizContainer');
+        const writingContainer = document.getElementById('writingContainer');
+
+        const resetButton = document.getElementById('resetButton');
+        const quizForm = document.getElementById('quizForm');
+        
+        // --- Section 1 Elements & Listeners ---
+        const checkButton1 = document.getElementById('checkButton1');
+        const resetButton1 = document.getElementById('resetButton1');
+        const feedback1 = document.getElementById('feedback1');
+        
+        checkButton1.addEventListener('click', checkActivity1);
+        resetButton1.addEventListener('click', resetActivity1);
+
+        // --- Section 2 Elements & Listeners ---
+        const checkButton2 = document.getElementById('checkButton2');
+        const resetButton2 = document.getElementById('resetButton2');
+        const feedback2 = document.getElementById('feedback2');
+        
+        checkButton2.addEventListener('click', checkActivity2);
+        resetButton2.addEventListener('click', resetActivity2);
+
+        // --- Section 3 Elements & Listeners ---
+        const checkButton3 = document.getElementById('checkButton3');
+        const resetButton3 = document.getElementById('resetButton3');
+        const feedback3 = document.getElementById('feedback3');
+
+        checkButton3.addEventListener('click', checkActivity3);
+        resetButton3.addEventListener('click', resetActivity3);
+
+        // --- Section 4 Elements & Listeners ---
+        const checkButton4 = document.getElementById('checkButton4');
+        const resetButton4 = document.getElementById('resetButton4');
+        const feedback4 = document.getElementById('feedback4');
+
+        checkButton4.addEventListener('click', () => checkActivity4(false)); 
+        resetButton4.addEventListener('click', resetActivity4);
+
+        // --- Section 5 Elements & Listeners ---
+        const checkButton5 = document.getElementById('checkButton5');
+        const resetButton5 = document.getElementById('resetButton5');
+        const feedback5 = document.getElementById('feedback5');
+
+        checkButton5.addEventListener('click', checkActivity5);
+        resetButton5.addEventListener('click', resetActivity5);
+
+        // --- Submission Section ---
+        const totalScoreButton = document.getElementById('totalScoreButton');
+        const submissionSection = document.getElementById('submissionSection');
+        const resultsBox = document.getElementById('resultsBox');
+        const nicknameInput = document.getElementById('nickname');
+
+        totalScoreButton.addEventListener('click', calculateAndShowTotalScore);
+        resetButton.addEventListener('click', resetActivity);
+
+        // --- Initialization ---
+        function init() {
+            // Populate Topic Selector
+            for (const [key, data] of Object.entries(lessonsData)) {
+                const option = document.createElement('option');
+                option.value = key;
+                option.textContent = data.title;
+                topicSelect.appendChild(option);
+            }
+
+            // Check for URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const topicFromUrl = urlParams.get('topic');
+
+            if (topicFromUrl && lessonsData[topicFromUrl]) {
+                topicSelect.value = topicFromUrl;
+                loadLesson(topicFromUrl);
+            } else if (topicSelect.options.length > 0) {
+                // Default to first
+                loadLesson(topicSelect.value);
+            }
+
+            // Listener
+            topicSelect.addEventListener('change', (e) => {
+                const newTopic = e.target.value;
+                loadLesson(newTopic);
+                
+                // Update URL without reloading
+                const newUrl = new URL(window.location);
+                newUrl.searchParams.set('topic', newTopic);
+                window.history.pushState({}, '', newUrl);
+            });
+        }
+
+        function loadLesson(topicId) {
+            currentTopicId = topicId;
+            const data = lessonsData[topicId];
+            
+            // 1. Header & Video
+            lessonTitle.textContent = data.title;
+            lessonLevel.textContent = data.level;
+            videoIframe.src = `https://www.youtube.com/embed/${data.video.id}`;
+            videoTitle.textContent = data.video.title;
+
+            // 2. Activity 1: Vocabulary
+            definitionsList.innerHTML = '';
+            data.activities.vocabulary.definitions.forEach(def => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${def.id}.</strong> ${def.text}`;
+                definitionsList.appendChild(li);
+            });
+
+            matchingItems.innerHTML = '';
+            const optionsHtml = `<option value="">-</option>` + data.activities.vocabulary.definitions.map(d => `<option value="${d.id}">${d.id}</option>`).join('');
+            
+            // Shuffle items for display
+            const shuffledItems = [...data.activities.vocabulary.items];
+            for (let i = shuffledItems.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledItems[i], shuffledItems[j]] = [shuffledItems[j], shuffledItems[i]];
+            }
+
+            shuffledItems.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.className = "flex items-center justify-between bg-gray-50 p-2 rounded";
+                div.innerHTML = `
+                    <label for="match${index+1}" class="font-semibold">${index+1}. ${item.label}</label>
+                    <select id="match${index+1}" class="match-input p-2 border border-gray-300 rounded-md w-20 text-center">
+                        ${optionsHtml}
+                    </select>
+                `;
+                matchingItems.appendChild(div);
+            });
+
+            // 3. Activity 2: Fill in the blanks
+            fillBlanksContainer.innerHTML = '';
+            data.activities.fillInTheBlanks.forEach((item, index) => {
+                const p = document.createElement('p');
+                p.innerHTML = `${index+1}. ${item.before} <input type="text" id="fill${index+1}" class="fill-input p-1 border-b-2 border-blue-300 text-blue-800 font-semibold w-32 text-center bg-blue-50 rounded" data-answer="${item.answer}"> ${item.after}`;
+                fillBlanksContainer.appendChild(p);
+            });
+
+            // 4. Activity 3: Scrambled
+            scrambledContainer.innerHTML = '';
+            data.activities.scrambled.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.innerHTML = `
+                    <p class="text-gray-500 italic mb-1 bg-gray-100 p-2 rounded inline-block">${item.text}</p>
+                    <input type="text" id="scramble${index+1}" class="scramble-input p-3 border border-gray-300 rounded-md w-full" placeholder="Write the sentence here..." data-answer="${item.answer}">
+                `;
+                scrambledContainer.appendChild(div);
+            });
+
+            // 5. Activity 4: Comprehension
+            readingText.innerHTML = data.activities.comprehension.text;
+            
+            quizContainer.innerHTML = '';
+            data.activities.comprehension.questions.forEach((q, index) => {
+                const div = document.createElement('div');
+                div.className = "quiz-question p-4 rounded-lg border border-gray-200 hover:bg-gray-50 transition";
+                div.setAttribute('data-answer', q.answer);
+                div.innerHTML = `
+                    <p class="font-medium text-lg mb-2">${index+1}. ${q.text}</p>
+                    <div class="flex space-x-6">
+                        <label class="cursor-pointer flex items-center"><input type="radio" name="q${index+1}" value="true" class="mr-2 w-5 h-5 text-blue-600"> True</label>
+                        <label class="cursor-pointer flex items-center"><input type="radio" name="q${index+1}" value="false" class="mr-2 w-5 h-5 text-blue-600"> False</label>
+                    </div>
+                `;
+                quizContainer.appendChild(div);
+            });
+
+            // 6. Activity 5: Writing
+            writingContainer.innerHTML = '';
+            data.activities.writtenExpression.questions.forEach((q, index) => {
+                const div = document.createElement('div');
+                div.innerHTML = `
+                    <label for="write${index+1}" class="font-medium block mb-2 text-lg">${index+1}. ${q.text}</label>
+                    <textarea id="write${index+1}" rows="3" class="write-input p-3 border border-gray-300 rounded-md w-full focus:ring-2 focus:ring-blue-500" placeholder="Your answer..."></textarea>
+                `;
+                writingContainer.appendChild(div);
+            });
+
+            // Update Correct Answers State
+            correctAnswers = {
+                matches: {},
+                fills: data.activities.fillInTheBlanks.map(i => i.answer),
+                scrambles: data.activities.scrambled.map(i => i.answer),
+                quiz: data.activities.comprehension.questions.map(i => i.answer)
+            };
+            shuffledItems.forEach((item, index) => {
+                correctAnswers.matches[`match${index+1}`] = item.answer;
+            });
+
+            // Reset UI
+            resetActivity();
+        }
+
+        // --- Utility ---
+        function normalizeString(str) {
+            return str.trim().toLowerCase().replace(/[.!,?]/g, '');
+        }
+
+        // --- Functions ---
+
+        function checkActivity1() {
+            const matchInputs = document.querySelectorAll('.match-input');
+            let totalScore = 0;
+            let maxScore = matchInputs.length;
+            
+            matchInputs.forEach(input => {
+                input.classList.remove('correct', 'incorrect');
+                const inputId = input.id;
+                const correctAnswer = correctAnswers.matches[inputId];
+                if (input.value === correctAnswer) {
+                    totalScore++;
+                    input.classList.add('correct');
+                } else {
+                    input.classList.add('incorrect');
+                }
+            });
+            feedback1.textContent = `Score: ${totalScore} / ${maxScore}`;
+            feedback1.className = (totalScore === maxScore) ? 'mt-4 text-lg font-semibold correct-text' : 'mt-4 text-lg font-semibold incorrect-text';
+        }
+
+        function checkActivity2() {
+            const fillInputs = document.querySelectorAll('.fill-input');
+            let totalScore = 0;
+            let maxScore = fillInputs.length;
+            
+            fillInputs.forEach((input, index) => {
+                input.classList.remove('correct', 'incorrect');
+                const userAnswer = normalizeString(input.value);
+                const correctAnswer = normalizeString(correctAnswers.fills[index]);
+                
+                // Simple approximate matching
+                if (userAnswer === correctAnswer) {
+                    totalScore++;
+                    input.classList.add('correct');
+                } else {
+                    input.classList.add('incorrect');
+                }
+            });
+            feedback2.textContent = `Score: ${totalScore} / ${maxScore}`;
+            feedback2.className = (totalScore === maxScore) ? 'mt-4 text-lg font-semibold correct-text' : 'mt-4 text-lg font-semibold incorrect-text';
+        }
+
+        function checkActivity3() {
+            const scrambleInputs = document.querySelectorAll('.scramble-input');
+            let totalScore = 0;
+            let maxScore = scrambleInputs.length;
+
+            scrambleInputs.forEach((input, index) => {
+                input.classList.remove('correct', 'incorrect');
+                const userAnswer = normalizeString(input.value);
+                const correctAnswer = normalizeString(correctAnswers.scrambles[index]);
+                
+                if (userAnswer === correctAnswer) {
+                    totalScore++;
+                    input.classList.add('correct');
+                } else {
+                    input.classList.add('incorrect');
+                }
+            });
+            feedback3.textContent = `Score: ${totalScore} / ${maxScore}`;
+            feedback3.className = (totalScore === maxScore) ? 'mt-4 text-lg font-semibold correct-text' : 'mt-4 text-lg font-semibold incorrect-text';
+        }
+
+        function checkActivity4(showAll = false) {
+            const quizQuestions = document.querySelectorAll('.quiz-question');
+            let totalScore = 0;
+            let maxScore = quizQuestions.length;
+
+            // Reset visual states first
+            quizQuestions.forEach((question) => {
+                 // Remove previous highlights
+                const labels = question.querySelectorAll('label');
+                labels.forEach(label => {
+                   label.classList.remove('correct-text-label', 'incorrect-text-label');
+                });
+            });
+
+            quizQuestions.forEach((question, index) => {
+                const selectedRadio = question.querySelector(`input[name="q${index + 1}"]:checked`);
+                const correctAnswer = correctAnswers.quiz[index];
+                
+                if (selectedRadio || showAll) {
+                    if (selectedRadio) {
+                        // Find the label for the selected radio
+                        const selectedLabel = selectedRadio.parentElement;
+                        
+                        if (selectedRadio.value === correctAnswer) {
+                            totalScore++;
+                            selectedLabel.classList.add('correct-text-label');
+                        } else {
+                            selectedLabel.classList.add('incorrect-text-label');
+                            
+                            // Highlight the correct one
+                            const radios = question.querySelectorAll(`input[name="q${index + 1}"]`);
+                            radios.forEach(radio => {
+                                if (radio.value === correctAnswer) {
+                                    radio.parentElement.classList.add('correct-text-label');
+                                }
+                            });
+                        }
+                    } else if (showAll) {
+                        // Show correct answer if not answered
+                         const radios = question.querySelectorAll(`input[name="q${index + 1}"]`);
+                            radios.forEach(radio => {
+                                if (radio.value === correctAnswer) {
+                                    radio.parentElement.classList.add('correct-text-label');
+                                }
+                            });
+                    }
+                }
+            });
+            feedback4.textContent = `Score: ${totalScore} / ${maxScore}`;
+            feedback4.className = (totalScore === maxScore) ? 'mt-4 text-lg font-semibold correct-text' : 'mt-4 text-lg font-semibold incorrect-text';
+        }
+        
+        function checkActivity5() {
+            const data = lessonsData[currentTopicId];
+            feedback5.innerHTML = data.activities.writtenExpression.examples;
+            feedback5.classList.remove('hidden');
+        }
+
+        // --- Reset Functions ---
+
+        function resetActivity1() {
+            const matchInputs = document.querySelectorAll('.match-input');
+            matchInputs.forEach(input => {
+                input.value = "";
+                input.classList.remove('correct', 'incorrect');
+            });
+            feedback1.textContent = "";
+        }
+
+        function resetActivity2() {
+            const fillInputs = document.querySelectorAll('.fill-input');
+            fillInputs.forEach(input => {
+                input.value = "";
+                input.classList.remove('correct', 'incorrect');
+            });
+            feedback2.textContent = "";
+        }
+
+        function resetActivity3() {
+            const scrambleInputs = document.querySelectorAll('.scramble-input');
+            scrambleInputs.forEach(input => {
+                input.value = "";
+                input.classList.remove('correct', 'incorrect');
+            });
+            feedback3.textContent = "";
+        }
+
+        function resetActivity4() {
+            const quizQuestions = document.querySelectorAll('.quiz-question');
+            quizQuestions.forEach((question, index) => {
+                const radios = question.querySelectorAll(`input[name="q${index + 1}"]`);
+                radios.forEach(radio => radio.checked = false);
+                
+                const labels = question.querySelectorAll('label');
+                labels.forEach(label => label.classList.remove('correct-text-label', 'incorrect-text-label'));
+            });
+            feedback4.textContent = "";
+        }
+        
+        function resetActivity5() {
+            const writeInputs = document.querySelectorAll('.write-input');
+            writeInputs.forEach(input => input.value = "");
+            feedback5.innerHTML = "";
+            feedback5.classList.add('hidden');
+        }
+
+        function resetActivity() {
+            quizForm.reset();
+            resetActivity1();
+            resetActivity2();
+            resetActivity3();
+            resetActivity4();
+            resetActivity5();
+
+            submissionSection.classList.remove('hidden');
+            resultsBox.classList.add('hidden');
+
+            quizForm.querySelectorAll('input, select, textarea, button').forEach(el => {
+                el.disabled = false;
+            });
+            
+            document.querySelectorAll('button[id^="checkButton"], button[id^="resetButton"]').forEach(btn => {
+                 if (btn.id !== 'resetButton') btn.classList.remove('hidden');
+            });
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // --- Total Score ---
+        function getScore1() {
+            const matchInputs = document.querySelectorAll('.match-input');
+            let score = 0;
+            matchInputs.forEach(input => {
+                if (input.value === correctAnswers.matches[input.id]) score++;
+            });
+            return {score: score, max: matchInputs.length};
+        }
+
+        function getScore2() {
+            const fillInputs = document.querySelectorAll('.fill-input');
+            let score = 0;
+            fillInputs.forEach((input, index) => {
+                if (normalizeString(input.value) === normalizeString(correctAnswers.fills[index])) score++;
+            });
+            return {score: score, max: fillInputs.length};
+        }
+
+        function getScore3() {
+            const scrambleInputs = document.querySelectorAll('.scramble-input');
+            let score = 0;
+            scrambleInputs.forEach((input, index) => {
+                if (normalizeString(input.value) === normalizeString(correctAnswers.scrambles[index])) score++;
+            });
+            return {score: score, max: scrambleInputs.length};
+        }
+
+        function getScore4() {
+            const quizQuestions = document.querySelectorAll('.quiz-question');
+            let score = 0;
+            quizQuestions.forEach((question, index) => {
+                const selectedRadio = question.querySelector(`input[name="q${index + 1}"]:checked`);
+                if (selectedRadio && selectedRadio.value === correctAnswers.quiz[index]) score++;
+            });
+            return {score: score, max: quizQuestions.length};
+        }
+
+        function calculateAndShowTotalScore() {
+            const score1 = getScore1();
+            const score2 = getScore2();
+            const score3 = getScore3();
+            const score4 = getScore4();
+            
+            const totalScore = score1.score + score2.score + score3.score + score4.score;
+            const maxScore = score1.max + score2.max + score3.max + score4.max;
+
+            const nickname = nicknameInput.value || 'Anonymous';
+            
+            // Get writing answers dynamically
+            const writeInputs = document.querySelectorAll('.write-input');
+            const write1 = writeInputs[0] ? writeInputs[0].value : '(No answer)';
+            const write2 = writeInputs[1] ? writeInputs[1].value : '(No answer)';
+            
+            const timestamp = new Date().toLocaleString('en-US', { dateStyle: 'long', timeStyle: 'short' });
+
+            document.getElementById('resultNickname').textContent = nickname;
+            document.getElementById('resultTimestamp').textContent = timestamp;
+            document.getElementById('resultTotalScore').textContent = totalScore;
+            document.getElementById('resultMaxScore').textContent = maxScore;
+            document.getElementById('resultWrite1').textContent = write1;
+            document.getElementById('resultWrite2').textContent = write2;
+
+            submissionSection.classList.add('hidden');
+            resultsBox.classList.remove('hidden');
+
+            // Lock inputs
+            quizForm.querySelectorAll('input, select, textarea, button').forEach(el => {
+                el.disabled = true;
+            });
+            
+            // Re-enable global reset
+            resetButton.disabled = false;
+            
+            // Hide activity buttons
+            document.querySelectorAll('button[id^="checkButton"], button[id^="resetButton"]').forEach(btn => {
+                if (btn.id !== 'resetButton') btn.classList.add('hidden');
+            });
+
+            // Show all corrections
+            checkActivity1();
+            checkActivity2();
+            checkActivity3();
+            checkActivity4(true);
+            
+            resultsBox.scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Start
+        init();
+
+    </script>
+</body>
+</html>
