@@ -77,54 +77,7 @@ const lessonsData = {
             }
         }
     },
-    "voyage": {
-        "title": "Les vacances et le voyage",
-        "level": "Niveau A1/A2 - Vocabulaire du voyage",
-        "video": {
-            "id": "dQw4w9WgXcQ", 
-            "title": "Vidéo : Exemple de vidéo sur le voyage"
-        },
-        "activities": {
-            "vocabulary": {
-                "definitions": [
-                    { "id": "A", "text": "Un document nécessaire pour voyager dans un autre pays." },
-                    { "id": "B", "text": "L'endroit où on dort pendant les vacances (hôtel, camping...)." },
-                    { "id": "C", "text": "Le moyen de transport qui vole dans le ciel." },
-                    { "id": "D", "text": "Ce qu'on prépare avec ses vêtements avant de partir." }
-                ],
-                "items": [
-                    { "label": "Passeport", "answer": "A" },
-                    { "label": "Hébergement", "answer": "B" },
-                    { "label": "Avion", "answer": "C" },
-                    { "label": "Valise", "answer": "D" }
-                ]
-            },
-            "fillInTheBlanks": [
-                { "before": "Je dois prendre mon", "answer": "passeport", "after": "pour aller aux États-Unis." },
-                { "before": "L'", "answer": "avion", "after": "décolle à 10 heures." }
-            ],
-            "scrambled": [
-                { "text": "aime / J' / voyager / .", "answer": "J'aime voyager." },
-                { "text": "est / valise / Ma / prête / .", "answer": "Ma valise est prête." }
-            ],
-            "comprehension": {
-                "text": "<p>Paul adore voyager. Cet été, il va en Espagne. Il prend l'avion. Il a réservé un hôtel près de la plage.</p>",
-                "questions": [
-                    { "text": "Paul déteste voyager.", "answer": "false" },
-                    { "text": "Il va en Italie.", "answer": "false" },
-                    { "text": "Il va à l'hôtel.", "answer": "true" }
-                ]
-            },
-            "writtenExpression": {
-                "questions": [
-                    { "text": "Où aimez-vous aller en vacances ?" }
-                ],
-                "examples": "<p>J'aime aller à la mer.</p>"
-            }
-        }
-    },
-
-    "tsunamis": {
+     "tsunamis": {
         "title": "Comment fonctionnent les tsunamis ?",
         "level": "Niveau A2 - Basé sur la vidéo de TED-Ed",
         "video": {

@@ -200,5 +200,347 @@ const lessonsData = {
             "examples": "<p class=\"font-semibold text-blue-800\">Here are some example answers:</p><p class=\"mt-2 font-bold text-sm\">1. Favorite food:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"I love to order pizza with extra cheese.\"</li><li>\"My favorite restaurant dish is sushi.\"</li></ul><p class=\"mt-2 font-bold text-sm\">2. Fast food vs Home:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"I prefer cooking at home because it is healthy.\"</li><li>\"I like fast food because it is quick and cheap.\"</li></ul>"
         }
     }
-}
+},
+"city_country_mouse": {
+    "title": "The City Mouse and the Country Mouse",
+    "level": "Level A2 - Based on the video by The Fable Cottage",
+    "video": {
+        "id": "3G7RQxk396A",
+        "title": "The City Mouse and the Country Mouse - US English"
+    },
+    "activities": {
+        "vocabulary": {
+            "definitions": [
+                { "id": "A", "text": "Small, warm, and comfortable." },
+                { "id": "B", "text": "The room at the bottom of a house, under the ground." },
+                { "id": "C", "text": "A large meal with a lot of good food." },
+                { "id": "D", "text": "A home for a bird or a mouse." },
+                { "id": "E", "text": "Very, very big." },
+                { "id": "F", "text": "When you cannot escape or leave a place." },
+                { "id": "G", "text": "The sharp nails of a cat or animal." },
+                { "id": "H", "text": "A place where you look at old or interesting things." }
+            ],
+            "items": [
+                { "label": "Cozy", "answer": "A" },
+                { "label": "Basement", "answer": "B" },
+                { "label": "Feast", "answer": "C" },
+                { "label": "Nest", "answer": "D" },
+                { "label": "Enormous", "answer": "E" },
+                { "label": "Trapped", "answer": "F" },
+                { "label": "Claws", "answer": "G" },
+                { "label": "Museum", "answer": "H" }
+            ]
+        },
+        "fillInTheBlanks": [
+            { "before": "The country mouse lives in a", "answer": "cozy", "after": "home inside a tree." },
+            { "before": "The city mouse says his house is", "answer": "enormous", "after": "with 20 rooms." },
+            { "before": "However, the mice actually live in the dark", "answer": "basement", "after": "downstairs." },
+            { "before": "They found a", "answer": "feast", "after": "of cheese and cake on the dining table." },
+            { "before": "They were", "answer": "trapped", "after": "in a hole because the cat was waiting outside." }
+        ],
+        "scrambled": [
+            { "text": "mouse / The / city / visits / a / friend / .", "answer": "The city mouse visits a friend." },
+            { "text": "eats / She / garden / from / food / her / .", "answer": "She eats food from her garden." },
+            { "text": "cat / The / sharp / has / claws / .", "answer": "The cat has sharp claws." },
+            { "text": "want / go / to / I / home / back / .", "answer": "I want to go back home." }
+        ],
+        "comprehension": {
+            "text": "<p>The City Mouse visits his friend in the country. The Country Mouse lives in a <strong>cozy</strong> nest and eats simple food from her garden, like corn and carrots. The City Mouse thinks the country is boring. He invites her to the city. The city house is <strong>enormous</strong>, but the mice actually live in the dark <strong>basement</strong>.</p><p>When they try to eat a <strong>feast</strong> of cake and cheese in the dining room, a scary cat attacks them! The cat has sharp <strong>claws</strong>. The Country Mouse is very scared. She decides that she prefers her quiet home and goes back to the country immediately.</p>",
+            "questions": [
+                { "text": "The Country Mouse eats food from a supermarket.", "answer": "false" },
+                { "text": "The house in the city is very small.", "answer": "false" },
+                { "text": "The mice live in the basement of the city house.", "answer": "true" },
+                { "text": "A cat attacks them while they are eating.", "answer": "true" },
+                { "text": "The Country Mouse decides to stay in the city forever.", "answer": "false" }
+            ]
+        },
+        "writtenExpression": {
+            "questions": [
+                { "text": "Which life do you prefer: the city or the country? Why?" },
+                { "text": "Why did the Country Mouse leave the city?" }
+            ],
+            "examples": "<p class=\"font-semibold text-blue-800\">Here are some example answers:</p><p class=\"mt-2 font-bold text-sm\">1. City vs Country:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"I prefer the city because there are many restaurants.\"</li><li>\"I like the country because it is quiet and peaceful.\"</li></ul><p class=\"mt-2 font-bold text-sm\">2. Why she left:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"She left because she was scared of the cat.\"</li><li>\"She didn't like the stress of the city.\"</li></ul>"
+        }
+    }
+}, 
+"bird_whale": {
+    "title": "The Bird and the Whale",
+    "level": "Level A2 - Based on the video by The Fable Cottage",
+    "video": {
+        "id": "FU_0NF_jrgE",
+        "title": "The Bird and the Whale - US English"
+    },
+    "activities": {
+        "vocabulary": {
+            "definitions": [
+                { "id": "A", "text": "The soft parts that cover a bird's body." },
+                { "id": "B", "text": "A high, steep wall of rock, usually near the sea." },
+                { "id": "C", "text": "To go down deep under the water." },
+                { "id": "D", "text": "The season after summer when it gets cold." },
+                { "id": "E", "text": "To fly high in the sky very easily." },
+                { "id": "F", "text": "The top part of the water." },
+                { "id": "G", "text": "To take air into your lungs." },
+                { "id": "H", "text": "The parts of a fish or whale used to swim." }
+            ],
+            "items": [
+                { "label": "Feathers", "answer": "A" },
+                { "label": "Cliffs", "answer": "B" },
+                { "label": "Dive", "answer": "C" },
+                { "label": "Autumn", "answer": "D" },
+                { "label": "Soar", "answer": "E" },
+                { "label": "Surface", "answer": "F" },
+                { "label": "Breathe", "answer": "G" },
+                { "label": "Fins", "answer": "H" }
+            ]
+        },
+        "fillInTheBlanks": [
+            { "before": "The whale loved the bird's beautiful white", "answer": "feathers", "after": "." },
+            { "before": "When summer ended, it turned into", "answer": "autumn", "after": "and the water got cold." },
+            { "before": "The bird tried to", "answer": "dive", "after": "deep into the water with the whale." },
+            { "before": "However, the bird could not", "answer": "breathe", "after": "under the water." },
+            { "before": "The whale tried to fly, but she did not have wings, only", "answer": "fins", "after": "." }
+        ],
+        "scrambled": [
+            { "text": "bird / whale / a / loved / A / .", "answer": "A bird loved a whale." },
+            { "text": "swim / deep / can / Whales / very / .", "answer": "Whales can swim very deep." },
+            { "text": "sky / bird / in / The / the / flew / .", "answer": "The bird flew in the sky." },
+            { "text": "said / They / goodbye / other / to / each / .", "answer": "They said goodbye to each other." }
+        ],
+        "comprehension": {
+            "text": "<p>A bird and a whale fell in love. They met in the bay all summer. They talked about the moon and ate fish together. When <strong>autumn</strong> came, the water became cold. The whale wanted to go to warmer waters.</p><p>The bird tried to become a whale, but he could not <strong>breathe</strong> underwater. He had to go back to the <strong>surface</strong>. Then, the whale tried to become a bird. She flapped her <strong>fins</strong>, but she was too heavy to <strong>soar</strong> in the sky. In the end, they were sad. They said goodbye because they could not live together.</p>",
+            "questions": [
+                { "text": "The bird and the whale met in the winter.", "answer": "false" },
+                { "text": "They both liked eating fish.", "answer": "true" },
+                { "text": "The bird could breathe underwater easily.", "answer": "false" },
+                { "text": "The whale could not fly because she was too heavy.", "answer": "true" },
+                { "text": "They stayed together in the bay forever.", "answer": "false" }
+            ]
+        },
+        "writtenExpression": {
+            "questions": [
+                { "text": "Why could the bird and the whale not live together?" },
+                { "text": "What is your favorite animal? Why?" }
+            ],
+            "examples": "<p class=\"font-semibold text-blue-800\">Here are some example answers:</p><p class=\"mt-2 font-bold text-sm\">1. Why they separated:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"The bird cannot swim and the whale cannot fly.\"</li><li>\"They live in different places.\"</li></ul><p class=\"mt-2 font-bold text-sm\">2. Favorite animal:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"My favorite animal is the dog because it is friendly.\"</li><li>\"I like dolphins because they are smart.\"</li></ul>"
+        }
+    }
+},
+"girl_ice_cream": {
+    "title": "The Girl and the Ice Cream Truck",
+    "level": "Level A2 - Based on the video by The Fable Cottage",
+    "video": {
+        "id": "1DeQVnSxcLk",
+        "title": "The Girl and the Ice Cream Truck - US English"
+    },
+    "activities": {
+        "vocabulary": {
+            "definitions": [
+                { "id": "A", "text": "Clothes you wear on your hands to keep them warm." },
+                { "id": "B", "text": "A sweet red fruit that grows in summer." },
+                { "id": "C", "text": "Soft, white ice that falls from the sky." },
+                { "id": "D", "text": "A special car that sells sweet, cold food." },
+                { "id": "E", "text": "Clothing for swimming." },
+                { "id": "F", "text": "A place to keep clothes inside a bedroom." },
+                { "id": "G", "text": "A place where mechanics fix broken cars." },
+                { "id": "H", "text": "Not wearing any shoes or socks." }
+            ],
+            "items": [
+                { "label": "Gloves", "answer": "A" },
+                { "label": "Strawberry", "answer": "B" },
+                { "label": "Snow", "answer": "C" },
+                { "label": "Ice CreamTruck", "answer": "D" },
+                { "label": "Bathing suit", "answer": "E" },
+                { "label": "Closet", "answer": "F" },
+                { "label": "Repair shop", "answer": "G" },
+                { "label": "Bare feet", "answer": "H" }
+            ]
+        },
+        "fillInTheBlanks": [
+            { "before": "In winter, we must wear a jacket and", "answer": "gloves", "after": "outside." },
+            { "before": "The girl loves to eat a sweet", "answer": "strawberry", "after": "in the summer." },
+            { "before": "She saw a big ice cream", "answer": "truck", "after": "driving on the street." },
+            { "before": "She put on her", "answer": "bathing", "after": "suit to go swimming." },
+            { "before": "The vehicle was broken, so it went to the", "answer": "repair", "after": "shop to be fixed." }
+        ],
+        "scrambled": [
+            { "text": "waiting / is / summer / for / She / .", "answer": "She is waiting for summer." },
+            { "text": "tired / winter / of / is / She / .", "answer": "She is tired of winter." },
+            { "text": "saw / truck / She / an / cream / ice / .", "answer": "She saw an ice cream truck." },
+            { "text": "feet / cold / Her / were / very / .", "answer": "Her feet were very cold." }
+        ],
+        "comprehension": {
+            "text": "<p>A young girl sits at her window. She is tired of the cold winter, the gray skies, and the <strong>snow</strong>. She wants summer to come so she can have picnics. Suddenly, she sees an ice cream <strong>truck</strong> on the street! She thinks summer is here.</p><p>She runs to her <strong>closet</strong> and puts on her <strong>bathing suit</strong>. She runs outside with <strong>bare feet</strong>. CRUNCH! The grass is icy and cold. She is confused. Then, she sees the truck go into a <strong>repair shop</strong>. It was not selling ice cream; it was broken. The girl learns that one sign does not mean summer is here.</p>",
+            "questions": [
+                { "text": "The girl likes winter and gray skies.", "answer": "false" },
+                { "text": "She sees a school bus on the street.", "answer": "false" },
+                { "text": "She wears a bathing suit to go outside.", "answer": "true" },
+                { "text": "The grass is warm and green.", "answer": "false" },
+                { "text": "The truck went to the shop to be fixed.", "answer": "true" }
+            ]
+        },
+        "writtenExpression": {
+            "questions": [
+                { "text": "What is your favorite season (summer, winter, etc.)? Why?" },
+                { "text": "What do you like to eat in the summer?" }
+            ],
+            "examples": "<p class=\"font-semibold text-blue-800\">Here are some example answers:</p><p class=\"mt-2 font-bold text-sm\">1. Favorite Season:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"I like summer because I can go to the beach.\"</li><li>\"I love winter because I like to ski.\"</li></ul><p class=\"mt-2 font-bold text-sm\">2. Summer Food:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"I love to eat chocolate ice cream.\"</li><li>\"I eat fresh fruit like watermelon.\"</li></ul>"
+        }
+    }
+},
+"daily_routines": {
+        "title": "Talking about Daily Routines",
+        "level": "Level A2 - Based on the video by Easy English",
+        "video": {
+            "id": "JwGnCIsLOpU",
+            "title": "Talking about Daily Routines"
+        },
+        "activities": {
+            "vocabulary": {
+                "definitions": [
+                    { "id": "A", "text": "The first meal of the day, eaten in the morning." },
+                    { "id": "B", "text": "Saturday and Sunday." },
+                    { "id": "C", "text": "School work that you must do at home." },
+                    { "id": "D", "text": "A sport played with a large orange ball." },
+                    { "id": "E", "text": "Washing your body while standing under water." },
+                    { "id": "F", "text": "Sleeping outside in a tent." },
+                    { "id": "G", "text": "The meal you eat in the evening." },
+                    { "id": "H", "text": "The usual things you do every day." }
+                ],
+                "items": [
+                    { "label": "Breakfast", "answer": "A" },
+                    { "label": "Weekend", "answer": "B" },
+                    { "label": "Homework", "answer": "C" },
+                    { "label": "Basketball", "answer": "D" },
+                    { "label": "Shower", "answer": "E" },
+                    { "label": "Camping", "answer": "F" },
+                    { "label": "Dinner", "answer": "G" },
+                    { "label": "Routine", "answer": "H" }
+                ]
+            },
+            "fillInTheBlanks": [
+                { "before": "Mark usually has", "answer": "breakfast", "after": "at 8:15 with his family." },
+                { "before": "After school, Mark goes to the Sports Centre to play", "answer": "basketball", "after": "." },
+                { "before": "Nicole does her", "answer": "homework", "after": "at 3:00 p.m." },
+                { "before": "On the", "answer": "weekend", "after": ", Mark likes going to the movies." },
+                { "before": "When the weather is warm, Nicole goes", "answer": "camping", "after": "and sleeps in a tent." }
+            ],
+            "scrambled": [
+                { "text": "starts / at / School / 9:00 / .", "answer": "School starts at 9:00." },
+                { "text": "bus / take / the / I / school / to / .", "answer": "I take the bus to school." },
+                { "text": "about / passionate / am / basketball / I / .", "answer": "I am passionate about basketball." },
+                { "text": "sleeping / love / I / tent / a / in / .", "answer": "I love sleeping in a tent." }
+            ],
+            "comprehension": {
+                "text": `
+                    <p>Mark and Nicole are talking about their <strong>daily routines</strong>. Mark usually gets up at 7:45. He has <strong>breakfast</strong> with his family and then his parents drive him to school. He loves playing <strong>basketball</strong> in the afternoon. In the evening, he plays the guitar or computer games.</p>
+                    <p>Nicole gets up earlier, at 7:00. She takes a <strong>shower</strong> and goes to school by bus. After school, she does her <strong>homework</strong> and goes to a dance club. She loves reading mysteries. On the <strong>weekend</strong>, she sometimes visits her grandparents or goes <strong>camping</strong>.</p>
+                `,
+                "questions": [
+                    { "text": "Mark gets up at 9:00 in the morning.", "answer": "false" },
+                    { "text": "Mark plays basketball after school.", "answer": "true" },
+                    { "text": "Nicole goes to school by car.", "answer": "false" },
+                    { "text": "Nicole likes to read mystery books.", "answer": "true" },
+                    { "text": "They both hate the weekend.", "answer": "false" }
+                ]
+            },
+            "writtenExpression": {
+                "questions": [
+                    { "text": "What time do you usually get up and go to sleep?" },
+                    { "text": "What is your favorite activity to do on the weekend?" }
+                ],
+                "examples": `
+                    <p class="font-semibold text-blue-800">Here are some example answers:</p>
+                    <p class="mt-2 font-bold text-sm">1. Wake up time:</p>
+                    <ul class="list-disc list-inside ml-4 italic text-gray-700">
+                        <li>"I get up at 7:00 am and I go to sleep at 10:00 pm."</li>
+                        <li>"I wake up late, around 8:30 am."</li>
+                    </ul>
+                    <p class="mt-2 font-bold text-sm">2. Weekend activity:</p>
+                    <ul class="list-disc list-inside ml-4 italic text-gray-700">
+                        <li>"On the weekend, I like to play football with friends."</li>
+                        <li>"I love to watch movies and relax on Sundays."</li>
+                    </ul>
+                `
+            }
+        }
+    },
+    "water_intoxication": {
+        "title": "Can You Drink Too Much Water?",
+        "level": "Level A2 - Based on the video by Peekaboo Kidz",
+        "video": {
+            "id": "sD6j5sNo5Zk",
+            "title": "What If You Drink Too Much Water? | Dr. Binocs"
+        },
+        "activities": {
+            "vocabulary": {
+                "definitions": [
+                    { "id": "A", "text": "The feeling that you need to drink something." },
+                    { "id": "B", "text": "The organs in the body that filter fluids and make urine." },
+                    { "id": "C", "text": "The hard bone in your head that protects the brain." },
+                    { "id": "D", "text": "To become larger or bigger, like a balloon." },
+                    { "id": "E", "text": "A mineral (salt) in the body that keeps balance." },
+                    { "id": "F", "text": "The path where blood travels through the body." },
+                    { "id": "G", "text": "The smallest living parts that make up the body." },
+                    { "id": "H", "text": "Not able to think clearly or understand things." }
+                ],
+                "items": [
+                    { "label": "Thirsty", "answer": "A" },
+                    { "label": "Kidneys", "answer": "B" },
+                    { "label": "Skull", "answer": "C" },
+                    { "label": "Swell", "answer": "D" },
+                    { "label": "Sodium", "answer": "E" },
+                    { "label": "Bloodstream", "answer": "F" },
+                    { "label": "Cells", "answer": "G" },
+                    { "label": "Confused", "answer": "H" }
+                ]
+            },
+            "fillInTheBlanks": [
+                { "before": "We should drink water when we feel", "answer": "Thirsty", "after": "." },
+                { "before": "The", "answer": "Kidneys", "after": "act like a filter for our body." },
+                { "before": "If you drink too much, your cells might", "answer": "Swell", "after": "up." },
+                { "before": "The", "answer": "Skull", "after": "is hard and does not have room to expand." },
+                { "before": "Water goes from the stomach into the", "answer": "Bloodstream", "after": "." }
+            ],
+            "scrambled": [
+                { "text": "body / Water / important / is / for / the / .", "answer": "Water is important for the body." },
+                { "text": "much / dangerous / Too / water / is / .", "answer": "Too much water is dangerous." },
+                { "text": "swell / brain / The / cells / can / .", "answer": "The brain cells can swell." },
+                { "text": "limit / have / a / kidneys / The / .", "answer": "The kidneys have a limit." }
+            ],
+            "comprehension": {
+                "text": `
+                    <p>Water is very important. It makes up about 60% of our body weight. However, drinking too much water can be dangerous. This happens because our <strong>kidneys</strong> can only process about 1 liter of water per hour.</p>
+                    <p>If we drink too fast, the water stays in the <strong>bloodstream</strong> and makes the <strong>sodium</strong> (salt) too low. Then, the water moves into our <strong>cells</strong>, making them <strong>swell</strong> like a balloon.</p>
+                    <p>This is very bad for the brain because the <strong>skull</strong> is hard and cannot expand. This pressure can cause headaches or make you feel <strong>confused</strong>. To be safe, you should only drink when you are <strong>thirsty</strong>.</p>
+                `,
+                "questions": [
+                    { "text": "Drinking too much water is always good for you.", "answer": "false" },
+                    { "text": "The kidneys can filter infinite water instantly.", "answer": "false" },
+                    { "text": "Cells can swell up like a balloon if there is too much water.", "answer": "true" },
+                    { "text": "The skull expands when the brain gets bigger.", "answer": "false" },
+                    { "text": "Your body tells you when to drink by making you feel thirsty.", "answer": "true" }
+                ]
+            },
+            "writtenExpression": {
+                "questions": [
+                    { "text": "Why is it dangerous to drink too much water quickly?" },
+                    { "text": "How does your body tell you that it needs water?" }
+                ],
+                "examples": `
+                    <p class="font-semibold text-blue-800">Here are some example answers:</p>
+                    <p class="mt-2 font-bold text-sm">1. Danger of too much water:</p>
+                    <ul class="list-disc list-inside ml-4 italic text-gray-700">
+                        <li>"It is dangerous because the brain cells can swell inside the skull."</li>
+                        <li>"The kidneys cannot clean the water fast enough."</li>
+                    </ul>
+                    <p class="mt-2 font-bold text-sm">2. Body signals:</p>
+                    <ul class="list-disc list-inside ml-4 italic text-gray-700">
+                        <li>"My body tells me I need water when I feel thirsty."</li>
+                        <li>"I get a dry mouth when I need to drink."</li>
+                    </ul>
+                `
+            }
+        }
+    }
+
     };
