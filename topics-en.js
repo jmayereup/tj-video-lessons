@@ -541,6 +541,68 @@ const lessonsData = {
                 `
             }
         }
+    },
+    "blue_nature": {
+        "title": "Why is the color blue so rare in nature?",
+        "level": "Level A2 - Based on the video by Be Smart",
+        "video": {
+            "id": "3g246c6Bv58",
+            "title": "Why Is Blue So Rare In Nature?"
+        },
+        "activities": {
+            "vocabulary": {
+                "definitions": [
+                    { "id": "A", "text": "Not common; very difficult to find." },
+                    { "id": "B", "text": "A substance or chemical that gives color to things." },
+                    { "id": "C", "text": "A small, flat piece of skin on a butterfly wing or fish." },
+                    { "id": "D", "text": "To take in light or liquid (like a sponge)." },
+                    { "id": "E", "text": "To throw back light without absorbing it (like a mirror)." },
+                    { "id": "F", "text": "How something is built or organized." },
+                    { "id": "G", "text": "A machine used to see very small things." },
+                    { "id": "H", "text": "A scientific way to solve problems using math and physics." }
+                ],
+                "items": [
+                    { "label": "Rare", "answer": "A" },
+                    { "label": "Pigment", "answer": "B" },
+                    { "label": "Scale", "answer": "C" },
+                    { "label": "Absorb", "answer": "D" },
+                    { "label": "Reflect", "answer": "E" },
+                    { "label": "Structure", "answer": "F" },
+                    { "label": "Microscope", "answer": "G" },
+                    { "label": "Engineering", "answer": "H" }
+                ]
+            },
+            "fillInTheBlanks": [
+                { "before": "The color blue is very", "answer": "rare", "after": "in the animal kingdom." },
+                { "before": "Most animals get their color from a", "answer": "pigment", "after": "in their food." },
+                { "before": "A butterfly wing has many tiny", "answer": "scales", "after": "on it." },
+                { "before": "We need a", "answer": "microscope", "after": "to see the shapes on the scales." },
+                { "before": "The special", "answer": "structure", "after": "of the wing makes the blue color." }
+            ],
+            "scrambled": [
+                { "text": "nature / rare / Blue / in / is / .", "answer": "Blue is rare in nature." },
+                { "text": "wings / Butterflies / beautiful / have / .", "answer": "Butterflies have beautiful wings." },
+                { "text": "eyes / light / see / We / with / .", "answer": "We see light with eyes." },
+                { "text": "pigment / butterflies / Blue / have / no / blue / .", "answer": "Blue butterflies have no blue pigment." }
+            ],
+            "comprehension": {
+                "text": "<p>Most animals have colors because of <strong>pigments</strong> (chemicals). For example, a flamingo is pink because it eats food with pink pigments. But blue is different. There are almost no animals with blue pigment.</p><p>Blue animals, like the Morpho butterfly, use <strong>structure</strong> to look blue. Their wings have tiny scales shaped like Christmas trees. These shapes <strong>reflect</strong> only blue light to our eyes. It is a trick of physics, not chemistry! If you put alcohol on the wing, the blue color disappears because the liquid changes the way light hits the wing.</p>",
+                "questions": [
+                    { "text": "Flamingos are pink because of a pigment.", "answer": "true" },
+                    { "text": "Many animals have a blue pigment.", "answer": "false" },
+                    { "text": "The blue color comes from the shape of the scales.", "answer": "true" },
+                    { "text": "If you put alcohol on the wing, it stays blue.", "answer": "false" },
+                    { "text": "The butterfly uses physics to make color.", "answer": "true" }
+                ]
+            },
+            "writtenExpression": {
+                "questions": [
+                    { "text": "Why is the blue butterfly different from a pink flamingo?" },
+                    { "text": "What is your favorite color in nature (flowers, animals, sky)? Why?" }
+                ],
+                "examples": "<p class=\"font-semibold text-blue-800\">Here are some example answers:</p><p class=\"mt-2 font-bold text-sm\">1. Blue vs Pink:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"The flamingo has a pigment, but the butterfly uses the shape of its wing.\"</li><li>\"The butterfly uses physics to make color, but the bird uses chemistry.\"</li></ul><p class=\"mt-2 font-bold text-sm\">2. Favorite color:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"I love green because I like walking in the forest.\"</li><li>\"My favorite color is red because I like roses.\"</li></ul>"
+            }
+        }
     }
 
     };
