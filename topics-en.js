@@ -603,6 +603,68 @@ const lessonsData = {
                 "examples": "<p class=\"font-semibold text-blue-800\">Here are some example answers:</p><p class=\"mt-2 font-bold text-sm\">1. Blue vs Pink:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"The flamingo has a pigment, but the butterfly uses the shape of its wing.\"</li><li>\"The butterfly uses physics to make color, but the bird uses chemistry.\"</li></ul><p class=\"mt-2 font-bold text-sm\">2. Favorite color:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"I love green because I like walking in the forest.\"</li><li>\"My favorite color is red because I like roses.\"</li></ul>"
             }
         }
+    },
+    "soil_wonders": {
+        "title": "Why is soil amazing?",
+        "level": "Level A2 - Based on the video by BBC Ideas",
+        "video": {
+            "id": "OiLITHMVcRw",
+            "title": "Why soil is one of the most amazing things on Earth | BBC Ideas"
+        },
+        "activities": {
+            "vocabulary": {
+                "definitions": [
+                    { "id": "A", "text": "The top layer of the earth where plants grow." },
+                    { "id": "B", "text": "A long, thin animal that lives in the ground." },
+                    { "id": "C", "text": "A large round object in space, like Earth." },
+                    { "id": "D", "text": "Something we take when we are sick to feel better." },
+                    { "id": "E", "text": "A living thing that grows in the earth and has leaves." },
+                    { "id": "F", "text": "What people and animals eat to live." },
+                    { "id": "G", "text": "To keep someone or something safe from bad things." },
+                    { "id": "H", "text": "To damage something so badly that it cannot be used." }
+                ],
+                "items": [
+                    { "label": "Soil", "answer": "A" },
+                    { "label": "Earthworm", "answer": "B" },
+                    { "label": "Planet", "answer": "C" },
+                    { "label": "Medicine", "answer": "D" },
+                    { "label": "Plant", "answer": "E" },
+                    { "label": "Food", "answer": "F" },
+                    { "label": "Protect", "answer": "G" },
+                    { "label": "Destroy", "answer": "H" }
+                ]
+            },
+            "fillInTheBlanks": [
+                { "before": "We live on a beautiful", "answer": "planet", "after": "called Earth." },
+                { "before": "Trees and flowers need good", "answer": "soil", "after": "to grow." },
+                { "before": "The", "answer": "earthworm", "after": "creates space underground for roots." },
+                { "before": "Scientists can make", "answer": "medicine", "after": "from things found in the ground." },
+                { "before": "We must", "answer": "protect", "after": "nature, not hurt it." }
+            ],
+            "scrambled": [
+                { "text": "is / alive / Soil / .", "answer": "Soil is alive." },
+                { "text": "worms / Darwin / liked / .", "answer": "Darwin liked worms." },
+                { "text": "plants / grow / Fungi / help / .", "answer": "Fungi help plants grow." },
+                { "text": "carbon / stores / Soil / .", "answer": "Soil stores carbon." }
+            ],
+            "comprehension": {
+                "text": "<p>Soil is very important for our planet. It is not just dirt! There are millions of tiny animals living in it. For example, the <strong>earthworm</strong> helps plants grow by making holes in the ground.</p><p>Soil also gives us <strong>food</strong> because plants grow in it. But we have a problem. We are losing soil very fast because of farming and pollution. It takes a very long time to make new soil—more than 100 years! So, we must be careful and keep the soil healthy.</p>",
+                "questions": [
+                    { "text": "Soil is just dead dirt.", "answer": "false" },
+                    { "text": "Earthworms help plants grow.", "answer": "true" },
+                    { "text": "We get food from the soil.", "answer": "true" },
+                    { "text": "Making new soil is very fast.", "answer": "false" },
+                    { "text": "Farming can hurt the soil.", "answer": "true" }
+                ]
+            },
+            "writtenExpression": {
+                "questions": [
+                    { "text": "Why is soil important for humans?" },
+                    { "text": "What can we do to help the planet?" }
+                ],
+                "examples": "<p class=\"font-semibold text-blue-800\">Here are some example answers:</p><p class=\"mt-2 font-bold text-sm\">1. Importance of soil:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"Soil gives us food to eat.\"</li><li>\"Soil helps plants grow and clean the water.\"</li></ul><p class=\"mt-2 font-bold text-sm\">2. Helping the planet:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"We can recycle plastic to help the planet.\"</li><li>\"We should not throw trash on the ground.\"</li></ul>"
+            }
+        }
     }
 
     };
