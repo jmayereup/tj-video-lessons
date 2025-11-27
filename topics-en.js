@@ -665,6 +665,225 @@ const lessonsData = {
                 "examples": "<p class=\"font-semibold text-blue-800\">Here are some example answers:</p><p class=\"mt-2 font-bold text-sm\">1. Importance of soil:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"Soil gives us food to eat.\"</li><li>\"Soil helps plants grow and clean the water.\"</li></ul><p class=\"mt-2 font-bold text-sm\">2. Helping the planet:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"We can recycle plastic to help the planet.\"</li><li>\"We should not throw trash on the ground.\"</li></ul>"
             }
         }
+    },
+    "food_waste": {
+        "title": "Do expiration dates really matter?",
+        "level": "Level A2 - Based on the video by TED-Ed",
+        "video": {
+            "id": "jDg8DQl7ZeQ",
+            "title": "Food expiration dates don’t mean what you think"
+        },
+        "activities": {
+            "vocabulary": {
+                "definitions": [
+                    { "id": "A", "text": "A cold machine to keep food fresh." },
+                    { "id": "B", "text": "When we throw away something that is still good." },
+                    { "id": "C", "text": "Not dangerous; okay to eat." },
+                    { "id": "D", "text": "To use your nose to know if food is good." },
+                    { "id": "E", "text": "A specific day, month, and year." },
+                    { "id": "F", "text": "A large store where people buy food." },
+                    { "id": "G", "text": "A paper on a package with information." },
+                    { "id": "H", "text": "Something new and good to eat; not old." }
+                ],
+                "items": [
+                    { "label": "Fridge", "answer": "A" },
+                    { "label": "Waste", "answer": "B" },
+                    { "label": "Safe", "answer": "C" },
+                    { "label": "Smell", "answer": "D" },
+                    { "label": "Date", "answer": "E" },
+                    { "label": "Supermarket", "answer": "F" },
+                    { "label": "Label", "answer": "G" },
+                    { "label": "Fresh", "answer": "H" }
+                ]
+            },
+            "fillInTheBlanks": [
+                { "before": "Please put the milk in the", "answer": "fridge", "after": "so it stays cold." },
+                { "before": "It is sad to", "answer": "waste", "after": "food that we can still eat." },
+                { "before": "We buy our groceries at the", "answer": "supermarket", "after": "every week." },
+                { "before": "Check the", "answer": "date", "after": "on the box to see when it was made." },
+                { "before": "This bread smells very", "answer": "fresh", "after": "and delicious." }
+            ],
+            "scrambled": [
+                { "text": "safe / usually / Dry / is / eat / to / food .", "answer": "Dry food is usually safe to eat." },
+                { "text": "your / Use / nose / smell / to / it / .", "answer": "Use your nose to smell it." },
+                { "text": "waste / Don't / food / .", "answer": "Don't waste food." },
+                { "text": "label / the / Check / date / on / the / .", "answer": "Check the date on the label." }
+            ],
+            "comprehension": {
+                "text": "<p>Many people throw away food because of the <strong>dates</strong> on the <strong>labels</strong>. They think the food is bad, but usually, it is <strong>safe</strong> to eat. In the United States, people <strong>waste</strong> a lot of food every year.</p><p>The dates on food are often about how <strong>fresh</strong> the food tastes, not about safety. If you are not sure, you can use your eyes and your nose. If the food does not <strong>smell</strong> bad, you can probably eat it. We should try to keep food in the <strong>fridge</strong> and eat it before it goes bad. Be extra careful with unfrozen meat.</p>",
+                "questions": [
+                    { "text": "People throw away food because they think it is dangerous.", "answer": "true" },
+                    { "text": "The dates on labels are always about safety.", "answer": "false" },
+                    { "text": "You can use your nose to check if food is good.", "answer": "true" },
+                    { "text": "We should waste more food.", "answer": "false" },
+                    { "text": "Food is usually safe even after the date on the label.", "answer": "true" }
+                ]
+            },
+            "writtenExpression": {
+                "questions": [
+                    { "text": "Do you check the dates on food before you eat it? Why or why not?" },
+                    { "text": "What do you do with old food in your fridge?" }
+                ],
+                "examples": "<p class=\"font-semibold text-blue-800\">Here are some example answers:</p><p class=\"mt-2 font-bold text-sm\">1. Checking dates:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"Yes, I always check the date because I don't want to get sick.\"</li><li>\"Sometimes, but I also smell the food to see if it is okay.\"</li></ul><p class=\"mt-2 font-bold text-sm\">2. Old food:</p><ul class=\"list-disc list-inside ml-4 italic text-gray-700\"><li>\"I give old vegetables to my chickens.\"</li><li>\"I try to cook it before it goes bad, or I throw it in the trash.\"</li></ul>"
+            }
+        }
+    },
+    "cells_virus": {
+        "title": "How do cells fight viruses?",
+        "level": "Level A1-A2 - Based on the video by TED-Ed",
+        "video": {
+            "id": "oqGuJhOeMek",
+            "title": "Video: \"Cell vs. virus: A battle for health\" - TED-Ed"
+        },
+        "activities": {
+            "vocabulary": {
+                "definitions": [
+                    { "id": "A", "text": "A tiny germ that makes people sick." },
+                    { "id": "B", "text": "The smallest building block of our body." },
+                    { "id": "C", "text": "The power we need to move, run, and play." },
+                    { "id": "D", "text": "When air comes out of your nose suddenly and loudly." },
+                    { "id": "E", "text": "To keep something safe from bad things." },
+                    { "id": "F", "text": "The thin skin around a cell." },
+                    { "id": "G", "text": "To battle against an enemy." },
+                    { "id": "H", "text": "Having a strong body, not sick." }
+                ],
+                "items": [
+                    { "label": "Virus", "answer": "A" },
+                    { "label": "Cell", "answer": "B" },
+                    { "label": "Energy", "answer": "C" },
+                    { "label": "Sneeze", "answer": "D" },
+                    { "label": "Protect", "answer": "E" },
+                    { "label": "Membrane", "answer": "F" },
+                    { "label": "Fight", "answer": "G" },
+                    { "label": "Healthy", "answer": "H" }
+                ]
+            },
+            "fillInTheBlanks": [
+                { "before": "When you have a cold, you might", "answer": "sneeze", "after": "a lot." },
+                { "before": "A", "answer": "virus", "after": "is very small but it can make you sick." },
+                { "before": "Every person starts as one tiny", "answer": "cell", "after": "." },
+                { "before": "We eat food to get", "answer": "energy", "after": "for our day." },
+                { "before": "It is important to eat vegetables to stay", "answer": "healthy", "after": "." }
+            ],
+            "scrambled": [
+                { "text": "virus / makes / A / sick / you / .", "answer": "A virus makes you sick." },
+                { "text": "body / cells / has / Your / .", "answer": "Your body has cells." },
+                { "text": "energy / need / We / .", "answer": "We need energy." },
+                { "text": "protects / membrane / The / cell / the / .", "answer": "The membrane protects the cell." }
+            ],
+            "comprehension": {
+                "text": `
+                    <p>Imagine your body is a busy city. The <strong>cells</strong> are the houses. A <strong>virus</strong> is a bad guy. It wants to come inside your body to make you sick.</p>
+                    <p>When someone <strong>sneezes</strong>, the virus flies into the air and can go into your nose. It tries to enter a cell. The cell has a <strong>membrane</strong>, which is like a wall or a door, to <strong>protect</strong> it. But sometimes the virus tricks the door and gets inside.</p>
+                    <p>The cell is smart! It knows an enemy is inside. The cell uses <strong>energy</strong> to make special weapons to <strong>fight</strong> the virus. These weapons are called antibodies. Finally, the cell wins, the virus goes away, and you become <strong>healthy</strong> again.</p>
+                `,
+                "questions": [
+                    { "text": "Cells are like houses in a city.", "answer": "true" },
+                    { "text": "A virus is a good friend to the cell.", "answer": "false" },
+                    { "text": "The membrane protects the cell.", "answer": "true" },
+                    { "text": "The cell does not need energy.", "answer": "false" },
+                    { "text": "The cell fights the virus to get healthy.", "answer": "true" }
+                ]
+            },
+            "writtenExpression": {
+                "questions": [
+                    { "text": "What do you do to keep your body healthy?" },
+                    { "text": "Why do we need energy?" }
+                ],
+                "examples": `
+                    <p class="font-semibold text-blue-800">Example answers:</p>
+                    <p class="mt-2 font-bold text-sm">1. Being healthy:</p>
+                    <ul class="list-disc list-inside ml-4 italic text-gray-700">
+                        <li>"I wash my hands and eat fruit."</li>
+                        <li>"I sleep 8 hours every night."</li>
+                    </ul>
+                    <p class="mt-2 font-bold text-sm">2. Energy:</p>
+                    <ul class="list-disc list-inside ml-4 italic text-gray-700">
+                        <li>"We need energy to run and play."</li>
+                        <li>"Energy helps me study at school."</li>
+                    </ul>
+                `
+            }
+        }
+    },
+    "green_slug": {
+        "title": "The Animal That Acts Like a Plant",
+        "level": "Level A2 - Based on the video by TED-Ed",
+        "video": {
+            "id": "fSaHVHTqDY0",
+            "title": "Video: \"These animals are also plants\" - TED-Ed"
+        },
+        "activities": {
+            "vocabulary": {
+                "definitions": [
+                    { "id": "A", "text": "A slow animal with a soft body and no shell." },
+                    { "id": "B", "text": "The flat green part of a plant." },
+                    { "id": "C", "text": "The light that comes from the sun." },
+                    { "id": "D", "text": "To take food into the body." },
+                    { "id": "E", "text": "The color of grass and salad." },
+                    { "id": "F", "text": "Small plants that live in the water." },
+                    { "id": "G", "text": "A living thing that grows in the earth, like a tree." },
+                    { "id": "H", "text": "A very large sea with salt water." }
+                ],
+                "items": [
+                    { "label": "Slug", "answer": "A" },
+                    { "label": "Leaf", "answer": "B" },
+                    { "label": "Sunlight", "answer": "C" },
+                    { "label": "Eat", "answer": "D" },
+                    { "label": "Green", "answer": "E" },
+                    { "label": "Algae", "answer": "F" },
+                    { "label": "Plant", "answer": "G" },
+                    { "label": "Ocean", "answer": "H" }
+                ]
+            },
+            "fillInTheBlanks": [
+                { "before": "The Elysia", "answer": "slug", "after": "looks very strange." },
+                { "before": "It looks exactly like a green", "answer": "leaf", "after": "to hide." },
+                { "before": "It likes to eat", "answer": "algae", "after": "which are small water plants." },
+                { "before": "This animal uses", "answer": "sunlight", "after": "to make its own energy." },
+                { "before": "It does not need to", "answer": "eat", "after": "for a long time." }
+            ],
+            "scrambled": [
+                { "text": "green / slug / The / is / .", "answer": "The slug is green." },
+                { "text": "like / looks / It / a / leaf / .", "answer": "It looks like a leaf." },
+                { "text": "needs / The / sunlight / plant / .", "answer": "The plant needs sunlight." },
+                { "text": "water / lives / in / It / the / .", "answer": "It lives in the water." }
+            ],
+            "comprehension": {
+                "text": `
+                    <p>This video is about a special animal called a <strong>slug</strong>. It lives in the <strong>ocean</strong>. It looks like a bright green <strong>leaf</strong>.</p>
+                    <p>Most animals must <strong>eat</strong> food to live. But this slug is different. It eats <strong>algae</strong> (water plants) and keeps their green parts inside its body.</p>
+                    <p>Now, the slug can use <strong>sunlight</strong> to make energy, just like a <strong>plant</strong>! It is half animal and half plant. It can go for one year without eating food.</p>
+                `,
+                "questions": [
+                    { "text": "The slug looks like a green leaf.", "answer": "true" },
+                    { "text": "The slug lives in the desert.", "answer": "false" },
+                    { "text": "It eats algae to get special green parts.", "answer": "true" },
+                    { "text": "It needs to eat food every day.", "answer": "false" },
+                    { "text": "It uses sunlight to make energy.", "answer": "true" }
+                ]
+            },
+            "writtenExpression": {
+                "questions": [
+                    { "text": "Imagine you are half animal and half plant. What would you do?" },
+                    { "text": "Do you think this slug is smart? Why or why not?" }
+                ],
+                "examples": `
+                    <p class="font-semibold text-blue-800">Here are some example answers:</p>
+                    <p class="mt-2 font-bold text-sm">1. Half animal, half plant:</p>
+                    <ul class="list-disc list-inside ml-4 italic text-gray-700">
+                        <li>"I would sit in the sun all day and sleep."</li>
+                        <li>"I would drink water and never cook food."</li>
+                    </ul>
+                    <p class="mt-2 font-bold text-sm">2. Is the slug smart?:</p>
+                    <ul class="list-disc list-inside ml-4 italic text-gray-700">
+                        <li>"Yes, because it steals food to survive."</li>
+                        <li>"No, it is just a small animal."</li>
+                    </ul>
+                `
+            }
+        }
     }
+    
 
     };

@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Worksheets</title>
-    <link rel="icon" type="image/x-icon" href="https://blog.teacherjake.com/apps/assets/favicon.ico">
-    <link rel="apple-touch-icon" href="https://blog.teacherjake.com/apps/assets/tj-logo.png">
+    <title>Spanish Worksheets</title>
     <!-- Load Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <script src="topics-en.js"></script>
+    <script src="topics-es.js"></script>
     <style>
         /* Add a subtle focus ring for accessibility */
         input:focus, select:focus, textarea:focus {
@@ -87,10 +85,21 @@
             <!-- Activity 1: Vocabulary -->
             <section class="bg-white p-6 rounded-lg shadow-md mb-6">
                 <h2 class="text-2xl font-semibold text-blue-700 mb-4">Activity 1: Vocabulary</h2>
-                <p class="text-gray-600 mb-4">Choose the correct word for each definition.</p>
+                <p class="text-gray-600 mb-4">Match the words (below) to the correct definition.</p>
                 
-                <div id="vocabularyContainer" class="space-y-4">
-                    <!-- Populated by JS -->
+                <div class="space-y-4">
+                    <!-- Definitions List -->
+                    <div class="bg-blue-50 p-4 rounded-md border border-blue-100">
+                        <h3 class="font-semibold mb-2 text-blue-800">Definitions</h3>
+                        <ul id="definitionsList" class="list-none text-gray-700 space-y-2">
+                            <!-- Populated by JS -->
+                        </ul>
+                    </div>
+
+                    <!-- Matching Inputs -->
+                    <div id="matchingItems" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <!-- Items Populated by JS -->
+                    </div>
                 </div>
                 <div class="flex justify-start space-x-4 mt-6">
                     <button id="checkButton1" type="button" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-300">Check</button>
@@ -113,9 +122,23 @@
                 <p id="feedback2" class="mt-4 text-lg font-semibold"></p>
             </section>
 
-            <!-- Activity 3: Reading and Comprehension -->
+            <!-- Activity 3: Scrambled Sentences -->
             <section class="bg-white p-6 rounded-lg shadow-md mb-6">
-                <h2 class="text-2xl font-semibold text-blue-700 mb-4">Activity 3: Comprehension</h2>
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">Activity 3: Scrambled Sentences</h2>
+                <p class="text-gray-600 mb-4">Put the words in order to make a correct sentence.</p>
+                <div id="scrambledContainer" class="space-y-6">
+                    <!-- Populated by JS -->
+                </div>
+                <div class="flex justify-start space-x-4 mt-6">
+                    <button id="checkButton3" type="button" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-300">Check</button>
+                    <button id="resetButton3" type="button" class="bg-gray-500 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-gray-600 transition duration-300">Reset</button>
+                </div>
+                <p id="feedback3" class="mt-4 text-lg font-semibold"></p>
+            </section>
+
+            <!-- Activity 4: Reading and Comprehension -->
+            <section class="bg-white p-6 rounded-lg shadow-md mb-6">
+                <h2 class="text-2xl font-semibold text-blue-700 mb-4">Activity 4: Comprehension</h2>
                 
                 <!-- Reading Text -->
                 <article class="bg-blue-50 p-6 rounded-md mb-6 border-l-4 border-blue-500 shadow-sm">
@@ -128,20 +151,6 @@
                 <!-- Quiz Questions -->
                 <h3 class="text-lg font-semibold mb-4 text-gray-800">True or False?</h3>
                 <div id="quizContainer" class="space-y-6">
-                    <!-- Populated by JS -->
-                </div>
-                <div class="flex justify-start space-x-4 mt-6">
-                    <button id="checkButton3" type="button" class="bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-blue-700 transition duration-300">Check</button>
-                    <button id="resetButton3" type="button" class="bg-gray-500 text-white font-semibold py-2 px-4 rounded-lg shadow hover:bg-gray-600 transition duration-300">Reset</button>
-                </div>
-                <p id="feedback3" class="mt-4 text-lg font-semibold"></p>
-            </section>
-
-            <!-- Activity 4: Scrambled Sentences -->
-            <section class="bg-white p-6 rounded-lg shadow-md mb-6">
-                <h2 class="text-2xl font-semibold text-blue-700 mb-4">Activity 4: Scrambled Sentences</h2>
-                <p class="text-gray-600 mb-4">Put the words in order to make a correct sentence.</p>
-                <div id="scrambledContainer" class="space-y-6">
                     <!-- Populated by JS -->
                 </div>
                 <div class="flex justify-start space-x-4 mt-6">
@@ -243,7 +252,8 @@
         const videoIframe = document.getElementById('videoIframe');
         const videoTitle = document.getElementById('videoTitle');
         
-        const vocabularyContainer = document.getElementById('vocabularyContainer');
+        const definitionsList = document.getElementById('definitionsList');
+        const matchingItems = document.getElementById('matchingItems');
         const fillBlanksContainer = document.getElementById('fillBlanksContainer');
         const scrambledContainer = document.getElementById('scrambledContainer');
         const readingText = document.getElementById('readingText');
@@ -269,20 +279,20 @@
         checkButton2.addEventListener('click', checkActivity2);
         resetButton2.addEventListener('click', resetActivity2);
 
-        // --- Section 3 Elements & Listeners (Now Comprehension) ---
+        // --- Section 3 Elements & Listeners ---
         const checkButton3 = document.getElementById('checkButton3');
         const resetButton3 = document.getElementById('resetButton3');
         const feedback3 = document.getElementById('feedback3');
 
-        checkButton3.addEventListener('click', () => checkActivity3(false)); 
+        checkButton3.addEventListener('click', checkActivity3);
         resetButton3.addEventListener('click', resetActivity3);
 
-        // --- Section 4 Elements & Listeners (Now Scrambled) ---
+        // --- Section 4 Elements & Listeners ---
         const checkButton4 = document.getElementById('checkButton4');
         const resetButton4 = document.getElementById('resetButton4');
         const feedback4 = document.getElementById('feedback4');
 
-        checkButton4.addEventListener('click', checkActivity4);
+        checkButton4.addEventListener('click', () => checkActivity4(false)); 
         resetButton4.addEventListener('click', resetActivity4);
 
         // --- Section 5 Elements & Listeners ---
@@ -347,51 +357,33 @@
             videoTitle.textContent = data.video.title;
 
             // 2. Activity 1: Vocabulary
-            vocabularyContainer.innerHTML = '';
-            
-            // Create a map of ID -> Label for easy lookup
-            const idToLabel = {};
-            data.activities.vocabulary.items.forEach(item => {
-                idToLabel[item.answer] = item.label;
+            definitionsList.innerHTML = '';
+            data.activities.vocabulary.definitions.forEach(def => {
+                const li = document.createElement('li');
+                li.innerHTML = `<strong>${def.id}.</strong> ${def.text}`;
+                definitionsList.appendChild(li);
             });
 
-            data.activities.vocabulary.definitions.forEach((def, index) => {
-                // Find correct answer label
-                const correctLabel = idToLabel[def.id];
-                
-                // Create distractors
-                const otherLabels = data.activities.vocabulary.items
-                    .filter(item => item.answer !== def.id)
-                    .map(item => item.label);
-                
-                // Shuffle and pick 3 distractors
-                for (let i = otherLabels.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [otherLabels[i], otherLabels[j]] = [otherLabels[j], otherLabels[i]];
-                }
-                const distractors = otherLabels.slice(0, 3);
-                
-                // Combine and shuffle options
-                const options = [correctLabel, ...distractors];
-                for (let i = options.length - 1; i > 0; i--) {
-                    const j = Math.floor(Math.random() * (i + 1));
-                    [options[i], options[j]] = [options[j], options[i]];
-                }
+            matchingItems.innerHTML = '';
+            const optionsHtml = `<option value="">-</option>` + data.activities.vocabulary.definitions.map(d => `<option value="${d.id}">${d.id}</option>`).join('');
+            
+            // Shuffle items for display
+            const shuffledItems = [...data.activities.vocabulary.items];
+            for (let i = shuffledItems.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffledItems[i], shuffledItems[j]] = [shuffledItems[j], shuffledItems[i]];
+            }
 
-                const optionsHtml = `<option value="">- Select -</option>` + options.map(opt => `<option value="${opt}">${opt}</option>`).join('');
-
+            shuffledItems.forEach((item, index) => {
                 const div = document.createElement('div');
-                div.className = "bg-gray-50 p-4 rounded-md border border-gray-200 flex flex-col sm:flex-row sm:items-center justify-between gap-4";
+                div.className = "flex items-center justify-between bg-gray-50 p-2 rounded";
                 div.innerHTML = `
-                    <div class="flex-1">
-                        <span class="font-bold text-blue-800 mr-2">${index+1}.</span>
-                        <span class="text-gray-700">${def.text}</span>
-                    </div>
-                    <select id="vocab${index+1}" class="vocab-input p-2 border border-gray-300 rounded-md w-full sm:w-48" data-answer="${correctLabel}">
+                    <label for="match${index+1}" class="font-semibold">${index+1}. ${item.label}</label>
+                    <select id="match${index+1}" class="match-input p-2 border border-gray-300 rounded-md w-20 text-center">
                         ${optionsHtml}
                     </select>
                 `;
-                vocabularyContainer.appendChild(div);
+                matchingItems.appendChild(div);
             });
 
             // 3. Activity 2: Fill in the blanks
@@ -402,7 +394,18 @@
                 fillBlanksContainer.appendChild(p);
             });
 
-            // 4. Activity 3: Comprehension (Swapped)
+            // 4. Activity 3: Scrambled
+            scrambledContainer.innerHTML = '';
+            data.activities.scrambled.forEach((item, index) => {
+                const div = document.createElement('div');
+                div.innerHTML = `
+                    <p class="text-gray-500 italic mb-1 bg-gray-100 p-2 rounded inline-block">${item.text}</p>
+                    <input type="text" id="scramble${index+1}" class="scramble-input p-3 border border-gray-300 rounded-md w-full" placeholder="Write the sentence here..." data-answer="${item.answer}">
+                `;
+                scrambledContainer.appendChild(div);
+            });
+
+            // 5. Activity 4: Comprehension
             readingText.innerHTML = data.activities.comprehension.text;
             
             quizContainer.innerHTML = '';
@@ -420,17 +423,6 @@
                 quizContainer.appendChild(div);
             });
 
-            // 5. Activity 4: Scrambled (Swapped)
-            scrambledContainer.innerHTML = '';
-            data.activities.scrambled.forEach((item, index) => {
-                const div = document.createElement('div');
-                div.innerHTML = `
-                    <p class="text-gray-500 italic mb-1 bg-gray-100 p-2 rounded inline-block">${item.text}</p>
-                    <input type="text" id="scramble${index+1}" class="scramble-input p-3 border border-gray-300 rounded-md w-full" placeholder="Write the sentence here..." data-answer="${item.answer}">
-                `;
-                scrambledContainer.appendChild(div);
-            });
-
             // 6. Activity 5: Writing
             writingContainer.innerHTML = '';
             data.activities.writtenExpression.questions.forEach((q, index) => {
@@ -444,11 +436,14 @@
 
             // Update Correct Answers State
             correctAnswers = {
-                vocab: data.activities.vocabulary.definitions.map(def => idToLabel[def.id]),
+                matches: {},
                 fills: data.activities.fillInTheBlanks.map(i => i.answer),
-                quiz: data.activities.comprehension.questions.map(i => i.answer),
-                scrambles: data.activities.scrambled.map(i => i.answer)
+                scrambles: data.activities.scrambled.map(i => i.answer),
+                quiz: data.activities.comprehension.questions.map(i => i.answer)
             };
+            shuffledItems.forEach((item, index) => {
+                correctAnswers.matches[`match${index+1}`] = item.answer;
+            });
 
             // Reset UI
             resetActivity();
@@ -462,16 +457,15 @@
         // --- Functions ---
 
         function checkActivity1() {
-            const vocabInputs = document.querySelectorAll('.vocab-input');
+            const matchInputs = document.querySelectorAll('.match-input');
             let totalScore = 0;
-            let maxScore = vocabInputs.length;
+            let maxScore = matchInputs.length;
             
-            vocabInputs.forEach(input => {
+            matchInputs.forEach(input => {
                 input.classList.remove('correct', 'incorrect');
-                const userAnswer = input.value;
-                const correctAnswer = input.dataset.answer;
-                
-                if (userAnswer === correctAnswer) {
+                const inputId = input.id;
+                const correctAnswer = correctAnswers.matches[inputId];
+                if (input.value === correctAnswer) {
                     totalScore++;
                     input.classList.add('correct');
                 } else {
@@ -504,7 +498,28 @@
             feedback2.className = (totalScore === maxScore) ? 'mt-4 text-lg font-semibold correct-text' : 'mt-4 text-lg font-semibold incorrect-text';
         }
 
-        function checkActivity3(showAll = false) {
+        function checkActivity3() {
+            const scrambleInputs = document.querySelectorAll('.scramble-input');
+            let totalScore = 0;
+            let maxScore = scrambleInputs.length;
+
+            scrambleInputs.forEach((input, index) => {
+                input.classList.remove('correct', 'incorrect');
+                const userAnswer = normalizeString(input.value);
+                const correctAnswer = normalizeString(correctAnswers.scrambles[index]);
+                
+                if (userAnswer === correctAnswer) {
+                    totalScore++;
+                    input.classList.add('correct');
+                } else {
+                    input.classList.add('incorrect');
+                }
+            });
+            feedback3.textContent = `Score: ${totalScore} / ${maxScore}`;
+            feedback3.className = (totalScore === maxScore) ? 'mt-4 text-lg font-semibold correct-text' : 'mt-4 text-lg font-semibold incorrect-text';
+        }
+
+        function checkActivity4(showAll = false) {
             const quizQuestions = document.querySelectorAll('.quiz-question');
             let totalScore = 0;
             let maxScore = quizQuestions.length;
@@ -552,27 +567,6 @@
                     }
                 }
             });
-            feedback3.textContent = `Score: ${totalScore} / ${maxScore}`;
-            feedback3.className = (totalScore === maxScore) ? 'mt-4 text-lg font-semibold correct-text' : 'mt-4 text-lg font-semibold incorrect-text';
-        }
-
-        function checkActivity4() {
-            const scrambleInputs = document.querySelectorAll('.scramble-input');
-            let totalScore = 0;
-            let maxScore = scrambleInputs.length;
-
-            scrambleInputs.forEach((input, index) => {
-                input.classList.remove('correct', 'incorrect');
-                const userAnswer = normalizeString(input.value);
-                const correctAnswer = normalizeString(correctAnswers.scrambles[index]);
-                
-                if (userAnswer === correctAnswer) {
-                    totalScore++;
-                    input.classList.add('correct');
-                } else {
-                    input.classList.add('incorrect');
-                }
-            });
             feedback4.textContent = `Score: ${totalScore} / ${maxScore}`;
             feedback4.className = (totalScore === maxScore) ? 'mt-4 text-lg font-semibold correct-text' : 'mt-4 text-lg font-semibold incorrect-text';
         }
@@ -586,8 +580,8 @@
         // --- Reset Functions ---
 
         function resetActivity1() {
-            const vocabInputs = document.querySelectorAll('.vocab-input');
-            vocabInputs.forEach(input => {
+            const matchInputs = document.querySelectorAll('.match-input');
+            matchInputs.forEach(input => {
                 input.value = "";
                 input.classList.remove('correct', 'incorrect');
             });
@@ -604,6 +598,15 @@
         }
 
         function resetActivity3() {
+            const scrambleInputs = document.querySelectorAll('.scramble-input');
+            scrambleInputs.forEach(input => {
+                input.value = "";
+                input.classList.remove('correct', 'incorrect');
+            });
+            feedback3.textContent = "";
+        }
+
+        function resetActivity4() {
             const quizQuestions = document.querySelectorAll('.quiz-question');
             quizQuestions.forEach((question, index) => {
                 const radios = question.querySelectorAll(`input[name="q${index + 1}"]`);
@@ -612,18 +615,8 @@
                 const labels = question.querySelectorAll('label');
                 labels.forEach(label => label.classList.remove('correct-text-label', 'incorrect-text-label'));
             });
-            feedback3.textContent = "";
-        }
-
-        function resetActivity4() {
-            const scrambleInputs = document.querySelectorAll('.scramble-input');
-            scrambleInputs.forEach(input => {
-                input.value = "";
-                input.classList.remove('correct', 'incorrect');
-            });
             feedback4.textContent = "";
         }
-
         
         function resetActivity5() {
             const writeInputs = document.querySelectorAll('.write-input');
@@ -657,12 +650,12 @@
 
         // --- Total Score ---
         function getScore1() {
-            const vocabInputs = document.querySelectorAll('.vocab-input');
+            const matchInputs = document.querySelectorAll('.match-input');
             let score = 0;
-            vocabInputs.forEach(input => {
-                if (input.value === input.dataset.answer) score++;
+            matchInputs.forEach(input => {
+                if (input.value === correctAnswers.matches[input.id]) score++;
             });
-            return {score: score, max: vocabInputs.length};
+            return {score: score, max: matchInputs.length};
         }
 
         function getScore2() {
@@ -675,6 +668,15 @@
         }
 
         function getScore3() {
+            const scrambleInputs = document.querySelectorAll('.scramble-input');
+            let score = 0;
+            scrambleInputs.forEach((input, index) => {
+                if (normalizeString(input.value) === normalizeString(correctAnswers.scrambles[index])) score++;
+            });
+            return {score: score, max: scrambleInputs.length};
+        }
+
+        function getScore4() {
             const quizQuestions = document.querySelectorAll('.quiz-question');
             let score = 0;
             quizQuestions.forEach((question, index) => {
@@ -682,15 +684,6 @@
                 if (selectedRadio && selectedRadio.value === correctAnswers.quiz[index]) score++;
             });
             return {score: score, max: quizQuestions.length};
-        }
-
-        function getScore4() {
-            const scrambleInputs = document.querySelectorAll('.scramble-input');
-            let score = 0;
-            scrambleInputs.forEach((input, index) => {
-                if (normalizeString(input.value) === normalizeString(correctAnswers.scrambles[index])) score++;
-            });
-            return {score: score, max: scrambleInputs.length};
         }
 
         function calculateAndShowTotalScore() {
@@ -737,8 +730,8 @@
             // Show all corrections
             checkActivity1();
             checkActivity2();
-            checkActivity3(true);
-            checkActivity4();
+            checkActivity3();
+            checkActivity4(true);
             
             resultsBox.scrollIntoView({ behavior: 'smooth' });
         }
@@ -822,20 +815,7 @@
                     </div>
 
                     <div class="activity-section">
-                        <h2>Activity 3: Reading Comprehension</h2>
-                        <div class="reading-text">
-                            ${data.activities.comprehension.text}
-                        </div>
-                        <p style="margin-bottom: 5px;"><strong>True or False?</strong></p>
-                        ${data.activities.comprehension.questions.map((q, i) => `
-                            <div class="compact-question">
-                                ${i+1}. ${q.text} &nbsp;&nbsp; [ ] True &nbsp;&nbsp; [ ] False
-                            </div>
-                        `).join('')}
-                    </div>
-
-                    <div class="activity-section">
-                        <h2>Activity 4: Scrambled Sentences</h2>
+                        <h2>Activity 3: Scrambled Sentences</h2>
                         <p style="margin-bottom: 5px;">Put the words in the correct order.</p>
                         <div class="scrambled-grid">
                             ${data.activities.scrambled.map((item, i) => `
@@ -845,6 +825,19 @@
                                 </div>
                             `).join('')}
                         </div>
+                    </div>
+
+                    <div class="activity-section">
+                        <h2>Activity 4: Reading Comprehension</h2>
+                        <div class="reading-text">
+                            ${data.activities.comprehension.text}
+                        </div>
+                        <p style="margin-bottom: 5px;"><strong>True or False?</strong></p>
+                        ${data.activities.comprehension.questions.map((q, i) => `
+                            <div class="compact-question">
+                                ${i+1}. ${q.text} &nbsp;&nbsp; [ ] True &nbsp;&nbsp; [ ] False
+                            </div>
+                        `).join('')}
                     </div>
 
                     <div class="activity-section">
